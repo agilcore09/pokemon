@@ -13,11 +13,11 @@ async function getPokemon() {
                 <div class="card" style="width: 18rem;">
                     <img src="img/1.webp" class="card-img-top img-fluid mx-auto pokeball" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-sm-center">${poke.name}</h5>
+                        <h5 class="card-title text-sm-center">${poke.name.toUpperCase()}</h5>
                         <p class="card-text">Liat-liat detail tentang pokemon yang mungkin sering kamu liat di film atau di game</p>
                         <div class="d-flex justify-content-center">
                         <button onclick='getDetailPokemon("${poke.url}")' class="btn tombol-poke mx-1" data-toggle="modal" data-target="#pokemodal">View Detail</button>
-                        <button onclick='getDetailPokemon("${poke.url}")' class="btn tombol-liat mx-1" data-toggle="modal" data-target="#pokemodal">Liat Detail</button>
+                        <button onclick='getDetailPokemon("${poke.url}")' class="btn tombol-liat mx-1" data-toggle="modal" data-target="#pokemodal">Buka Poke</button>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ async function getDetailPokemon(pokemon){
 
     // mengubah nama pokemon
     const pokeName = document.querySelector("#poke-name");
-    pokeName.innerHTML = response.name
+    pokeName.innerHTML = response.name.toUpperCase()
     
     // mengubah img pokemon
     const pokeImg = document.querySelector("#poke-img");
