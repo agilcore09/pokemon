@@ -16,5 +16,27 @@ nav
 
 .pokeball
 {
-    width: 100px;
+    width: 200px;
+    text-align: center;
+}
+
+#poke-img
+{
+    width: 150px;
+}
+
+.skills{
+    background-color: #7952b3;
+}
+
+.tombol-poke{
+    background-color: #7952b3;
+    color: white;
+}
+
+.tombol-liat{
+    background-color: white;
+    color: #7952b3;
+    font-weight: bold;
+    border: #7952b3 solid 2px;
 }

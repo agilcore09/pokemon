@@ -9,15 +9,16 @@ async function getPokemon() {
             // create elements
             getCol.insertAdjacentHTML('beforeend',
             `<div class="col-md-4 col-sm-12 my-3">
-            <div class="wrapper">
+            <div class="wrapper d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <img src="img/1.webp" class="card-img-top img-fluid pokeball" alt="...">
+                    <img src="img/1.webp" class="card-img-top img-fluid mx-auto pokeball" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">${poke.name}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up
-                            the bulk
-                            of the card's content.</p>
-                        <button type="button" class="btn btn-primary tombol-poke" data-poke="${poke.name}" data-toggle="modal" data-target="#pokemodal">Go View Detail</button>
+                        <h5 class="card-title text-sm-center">${poke.name}</h5>
+                        <p class="card-text">Liat-liat detail tentang pokemon yang mungkin sering kamu liat di film atau di game</p>
+                        <div class="d-flex justify-content-center">
+                        <button onclick='getDetailPokemon("${poke.url}")' class="btn tombol-poke mx-1" data-toggle="modal" data-target="#pokemodal">View Detail</button>
+                        <button onclick='getDetailPokemon("${poke.url}")' class="btn tombol-liat mx-1" data-toggle="modal" data-target="#pokemodal">Liat Detail</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,11 +32,25 @@ async function getPokemon() {
 
 getPokemon()
 
-function getDetailPokemon(pokemon){
-    const tombol = document.querySelector(".tombol-poke");
-    this.addEventListener("click", function(){
-        console.log(tombol.value)
-    });
-}
+async function getDetailPokemon(pokemon){
 
-getDetailPokemon()
+    const config = await fetch(pokemon);
+    const response = await config.json();
+
+    // mengubah nama pokemon
+    const pokeName = document.querySelector("#poke-name");
+    pokeName.innerHTML = response.name
+    
+    // mengubah img pokemon
+    const pokeImg = document.querySelector("#poke-img");
+    pokeImg.setAttribute("src", response.sprites.front_shiny);
+
+    // mengubah ability 
+    const ability = document.querySelector(".ability");
+    response.abilities.forEach(abi => {
+        ability.insertAdjacentHTML("beforeend", `<button class="btn badge mr-2 skills text-light">${abi.ability.name}</button>`);
+    });
+
+
+    console.log(response)
+}
