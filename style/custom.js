@@ -14,7 +14,7 @@ async function getPokemon() {
                     <img src="img/1.webp" class="card-img-top img-fluid mx-auto pokeball" alt="...">
                     <div class="card-body">
                         <h5 class="card-title text-sm-center">${poke.name.toUpperCase()}</h5>
-                        <p class="card-text">Liat-liat detail tentang pokemon yang mungkin sering kamu liat di film atau di game</p>
+                        <p class="card-text">Liat-liat detail tentang <span id="poke-name-detail">${poke.name}</span> yang mungkin sering kamu liat di film atau di game</p>
                         <div class="d-flex justify-content-center">
                         <button onclick='getDetailPokemon("${poke.url}")' class="btn tombol-poke mx-1" data-toggle="modal" data-target="#pokemodal">View Detail</button>
                         <button onclick='getDetailPokemon("${poke.url}")' class="btn tombol-liat mx-1" data-toggle="modal" data-target="#pokemodal">Buka Poke</button>
@@ -51,6 +51,16 @@ async function getDetailPokemon(pokemon){
         ability.insertAdjacentHTML("beforeend", `<button class="btn badge mr-2 skills text-light">${abi.ability.name}</button>`);
     });
 
+    // mengubah berat
+    const weight = document.querySelector(".berat");
+    weight.innerHTML = `<small>Weight : <span id="berat-text">${response.weight}</span></small></button>`;
 
-    console.log(response)
+    // untuk mengambil stat
+    const stats = document.querySelector(".stat");
+    response.stats.forEach(stat => {
+        console.log(stat.stat.name)
+        stats.insertAdjacentHTML("beforeend", `<button class="btn badge mr-2 skills text-light">${stat.stat.name}</button>`);
+    });
+
+    console.log(response.stats)
 }

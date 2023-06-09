@@ -13,7 +13,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light py-3">
+    <nav class="navbar navbar-expand-lg navbar-light pb-3 pt-3 m-0">
         <a class="navbar-brand text-light mx-auto font-header" href="/">Pokemon API</a>
     </nav>
 
@@ -21,35 +21,49 @@
         <div class="row">
             <div class="col-12">
                 <div class="row wrappers">
-                    
+
                 </div>
 
                 <!-- modal -->
-                <div class="modal fade" id="pokemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="pokemodal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="poke-name"></h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <img id="poke-img" src="" alt="gambar-pokemon">
-                          <div>
-                            <small>Skill</small>
-                          </div>
-                          <div class="ability">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="poke-name"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex justify-content-center">
+                                    <img class="mx-auto" id="poke-img" src="" alt="gambar-pokemon">
+                                </div>
 
-                          </div>
+                                <div class="skill-pokemon">
+                                    <small>Skills</small>
+                                </div>
+
+                                <div class="ability">
+                                    
+                                </div>
+
+                                <div class="berat mt-3">
+                                    
+                                </div>
+                                
+                                <div class="stat mt-3">
+                                    <div>
+                                        <small>Stats </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn tombol-close" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
@@ -57,15 +71,12 @@
     <!-- Footer -->
     <footer class="text-center text-white" style="background-color: #7952b3">
 
-      <!-- Copyright -->
-      <div
-           class="text-center p-3"
-           style="background-color: rgba(0, 0, 0, 0.2)"
-           >
-        © 2023 Copyright:
-        <a class="text-white" href="https://instagram.com/agil.core">Create by @agil.core</a>
-      </div>
-      <!-- Copyright -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2023 Copyright:
+            <a class="text-white" href="https://instagram.com/agil.core">Create by @agil.core</a>
+        </div>
+        <!-- Copyright -->
     </footer>
     <!-- Footer -->
 
